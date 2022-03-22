@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-12 name">
+          <h2>Name<sup>*</sup></h2>
+        </div>
+        <div class="form-group col-md-6">
+          <input
+            type="text"
+            class="form-control is-invalid"
+            style="border: 3px solid rgb(204, 201, 201)"
+            required
+          />
+          <label for="fname">First</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input
+            type="text"
+            class="form-control"
+            style="border: 3px solid rgb(204, 201, 201)"
+            required
+          />
+          <label for="lname">Last</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="email" class="emailText name"
+          ><h2>Email<sup>*</sup></h2></label
+        >
+        <input
+          type="email"
+          class="form-control"
+          style="border: 3px solid rgb(204, 201, 201)"
+          required
+        />
+      </div>
+      <br />
+      <div>
+        <h2>Your Experience<sup>*</sup></h2>
+        <h2 class="exp">⭐⭐⭐⭐⭐</h2>
+        <p>Overall,how would you rate you experience with us?</p>
+      </div>
+      <div class="tableFeedback">
+        <div class="feedback1">
+          <h2>How satisfied are you with us?</h2>
+          <table class="feedback">
+            <tr>
+              <th></th>
+              <th>Very Unsatisfied</th>
+              <th>Unsatisfied</th>
+              <th>Neutral</th>
+              <th>Satisfied</th>
+              <th>Very Satisfied</th>
+            </tr>
+            <tr>
+              <td>Purchase</td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+            </tr>
+            <tr>
+              <td>Service</td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+            </tr>
+            <tr>
+              <td>Company Overall</td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+            </tr>
+          </table>
+        </div>
+        <div class="feedback2">
+          <h2>How satisfied are you with us?</h2>
+          <table class="feedback">
+            <tr>
+              <th></th>
+              <th>Very Unlikely</th>
+              <th>Unlikely</th>
+              <th>Neutral</th>
+              <th>Likely</th>
+              <th>Very Likely</th>
+            </tr>
+            <tr>
+              <td>Buy from us again</td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+              <td><input type="radio" value="none" name="purchase" /></td>
+            </tr>
+            <tr>
+              <td>Recommend our products to others</td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+              <td><input type="radio" value="none" name="service" /></td>
+            </tr>
+            <tr>
+              <td>Recommend our company to others</td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+              <td><input type="radio" value="none" name="company" /></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <label for="additionalComment"
+          ><h2>Additional comments or suggestions</h2></label
+        ><br />
+
+        <textarea
+          row="5"
+          col="80"
+          style="
+            width: 100%;
+            height: 120px;
+            border: 3px solid rgb(204, 201, 201);
+          "
+        ></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </body>
+</html>
