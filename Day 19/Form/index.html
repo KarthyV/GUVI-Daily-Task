@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="container" class="ui two column grid">
+      <div class="column column1">
+        <h1>Form Submission :</h1>
+        <form class="ui form" action="#">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" id="fName" placeholder="First Name" />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" id="lName" placeholder="Last Name" />
+          </div>
+          <div class="field">
+            <label>Address</label>
+            <div class="fields">
+              <div class="twelve wide field">
+                <input type="text" id="address" placeholder="Street Address" />
+              </div>
+              <div class="four wide field">
+                <input type="text" id="pincode" placeholder="Pin Code" />
+              </div>
+            </div>
+          </div>
+          <div class="inline fields">
+            <label for="gender">Gender:</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="gender" id="gender" value="male" />
+                <label>Male</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="gender" id="gender" value="female" />
+                <label>Female</label>
+              </div>
+            </div>
+          </div>
+          <div class="inline field">
+            <label>Choice of Food <i>(Must select 2 of 5)</i></label>
+            <br /><br />
+            <input
+              class="ui button"
+              type="checkbox"
+              name="food"
+              value="north Indian"
+              id="ui button food"
+            />North Indian<br />
+            <input
+              class="ui button"
+              type="checkbox"
+              name="food"
+              value="south Indian"
+              id="ui button food"
+            />South Indian<br />
+            <input
+              class="ui button"
+              type="checkbox"
+              name="food"
+              value="Chinese"
+              id="ui button food"
+            />Chinese<br />
+            <input
+              class="ui button"
+              type="checkbox"
+              name="food"
+              value="japanese"
+              id="ui button food"
+            />Japanese<br />
+            <input
+              class="ui button"
+              type="checkbox"
+              name="food"
+              value="sea food"
+              id="ui button food"
+            />Sea Food <br /><br />
+          </div>
+          <div class="field">
+            <label>State</label>
+            <input type="text" id="state" placeholder="State" />
+          </div>
+          <div class="field">
+            <label>Country</label>
+            <input type="text" id="country" placeholder="Country" />
+          </div>
+          <button class="ui button" type="submit" id="button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <table class="ui celled table">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Food</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Name">James</td>
+          <td data-label="Age">24</td>
+          <td data-label="Job">Engineer</td>
+          <td data-label="Name">Jillhhhhhhhhhhhhhhhhhh</td>
+          <td data-label="Age">26</td>
+          <td data-label="Job">Engineer</td>
+          <td data-label="Job">Engineer</td>
+          <td data-label="Job">Engineerggggg</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>

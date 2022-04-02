@@ -1,0 +1,15 @@
+
+@media only screen and (max-device-width: 200px){
+    .column1{
+        width: 30%!important
+    }
+}
+
+body {
+    background-color: beige !important;
+    height: 100vh;
+}
+
+table {
+    width: 100%;
+}

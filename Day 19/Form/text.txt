@@ -1,0 +1,7 @@
+
+                    <label for="food">Choice of Food: <span class="span" >(must choose at least 2 out of 5 options)</span></label><br>
+                    <input type="checkbox" name="food" value="north Indian" id="food" class="food m-2">North Indian  <br>
+                    <input type="checkbox" name="food" value="south Indian" id="food" class="food m-2">South Indian <br>
+                    <input type="checkbox" name="food" value="chinese" id="food" class="food m-2">Chinese <br>
+                    <input type="checkbox" name="food" value="japanese" id="food" class="food m-2" >Japanese <br>
+                    <input type="checkbox" name="food" value="sea-food" id="food" class="food m-2">Sea Food <br><br>
