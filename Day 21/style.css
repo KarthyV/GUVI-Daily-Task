@@ -1,0 +1,21 @@
+body {
+    background-image: linear-gradient(to right bottom, #ffa500, #ff9b71, #ffa8bb, #ffc3ed, #f1ddff, #d8deff, #bddfff, #a4e0f9, #47d4e3, #00c5b4, #00b26e, #179b00);
+    height:100vh;
+    overflow-x:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+div {
+    color: blue;
+    font-size: 50px;
+    font-weight: bold;
+    animation: zoom-in-zoom-out 1s ease infinite;   
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {transform: scale(1, 1)}
+    50% {transform: scale(1.5, 1.5)}
+    100% {transform: scale(1, 1)}
+  }
