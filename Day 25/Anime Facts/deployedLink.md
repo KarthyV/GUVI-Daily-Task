@@ -1,0 +1,1 @@
+https://top-anime-list.netlify.app/
