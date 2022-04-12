@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* For Media device above 768px width */
+@media screen and (min-width: 768px) {
+  .header {
+    font-size: 3em !important;
+  }
+  .card {
+    max-width: 40% !important;
+  }
+  .container {
+    margin: 50px 0 !important;
+  }
+}
+
+/* Body CSS */
+body {
+  height: 100vh !important;
+  background-image: url("./iceFire.jpg");
+  background-size: cover;
+}
+
+/* Title CSS */
+h1 {
+  color: #9dabbe;
+  font-family: "Cinzel", serif;
+  padding: 30px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 3rem !important;
+}
+
+/* Book CSS */
+.container {
+  margin: 10px 0;
+}
+.card {
+  background-color: #bc4512 !important;
+  word-wrap: break-word !important;
+}
+
+/* Book Title CSS */
+.header {
+  font-family: "Cinzel", serif !important;
+  letter-spacing: 3px !important;
+  color: rgb(223, 221, 221) !important;
+}
+
+/* ISBN CSS */
+.description {
+  color: black !important;
+  font-weight: bold;
+}
+
+/* Author CSS */
+.category {
+  color: #6a0b09 !important;
+}
+
+/* For Pagination Buttons CSS */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 50px;
+  margin: 20px;
+  width: 100%;
+}
+
+.button {
+  cursor: pointer;
+  margin: 0 0.25em 0 0;
+  padding: 0.8em 1.5em;
+  font-weight: 700;
+  line-height: 1em;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  letter-spacing: 2px;
+}
+
+/* For Ice Button CSS */
+.teal {
+  background-color: transparent;
+  color: #6dffff;
+  border: 1px solid #6dffff;
+  border-radius: 3px;
+}
+
+.teal:hover {
+  background-color: #00b5ad;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* For Fire button CSS */
+.orange {
+  background-color: transparent;
+  color: #ff851b;
+  border: 2px solid #ff851b;
+  border-radius: 3px;
+}
+
+.orange:hover {
+  background-color: #f2711c;
+  color: #fff;
+  text-shadow: none;
+}
