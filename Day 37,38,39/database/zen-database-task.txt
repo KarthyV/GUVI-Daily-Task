@@ -1,0 +1,249 @@
+1. Find all the information about each products
+
+const allProducts = db.collection("products").find({}).toArray();
+
+2. Find the product price which are between 400 to 800
+
+const products = db.collection("products").find({"product_price":{$gte:400,$lte:800}}).toArray();
+
+3. Find the product price which are not between 400 to 600
+
+const products = db.collection("products").find({$or : [{"product_price":{$lt:400}}, {"product_price":{$gt:600}}]}).toArray();
+
+4. List the four product which are grater than 500 in price 
+
+const products = db.collection("products").find({"product_price":{$gte:500}}).toArray();
+
+5. Find the product name and product material of each products
+
+const products = db.collection("products").find({}, { projection : { product_name:1, product_material:1 } }).toArray();
+
+6. Find the product with a row id of 10
+
+const products = db.collection("products").find({"id" : "10"}).toArray();
+
+7. Find only the product name and product material (same as no:5)
+
+const products = db.collection("products").find({}, { projection : { product_name:1, product_material:1 } }).toArray();
+
+8. Find all products which contain the value of soft in product material 
+
+const products = db.collection("products").find({"product_material" : /^Soft/}).toArray();
+
+9. Find products which contain product color indigo  and product price 492.00
+
+const products = db.collection("products").find({$and : [{"product_color" : "indigo"}, {"product_price" : 492}]}).toArray();
+
+10. Delete the products which product price value are same
+
+//Getting the count of the duplicates
+const count = db
+    .collection("products")
+    .aggregate([
+      { $group: { _id: "$product_price", count: { $sum: 1 } } },
+      { $project: { count: 1 } },
+    ])
+    .toArray();
+
+//Getting the duplicate product price values
+const duplicate = count
+    .filter((doc) => (doc.count > 1 ? doc : null))
+    .map((doc) => doc._id);
+
+//Filtering out the duplicate from the products
+const products = dbo
+    .collection("products")
+    .find({ product_price: { $nin: duplicate } })
+    .toArray();
+
+
+//////// ZEN SYSTEM TASK /////
+
+1.	users
+2.	codekata
+3.	attendance
+4.	topics
+5.	tasks
+6.	company_drives
+7.	mentors
+
+# Create database
+use zen_class;
+
+# Create collection and insert data – “USERS”
+db.users.insertMany([
+    {
+        userid: 1,
+        name: "Steve",
+        email: "Steve@gmail.com", 
+    },
+     {
+        userid: 2,
+        name: "Tommy",
+        email: "Tommy@gmail.com",
+    },
+     {
+        userid: 3,
+        name: "Robert",
+        email: "Robert@gmail.com",
+    },
+]);
+
+# Create collection and insert data – “CODEKATA”
+    db.codekata.insertMany([
+    {
+        userid: 1,
+        title:"Array"
+        problems: 50
+    },
+     {
+        userid: 2,
+        title:"Strings"
+        problems: 30
+    },
+     {
+        userid: 3,
+        title:"Onjects"
+        problems: 70
+    },
+])
+
+# Create collection and insert data – “TOPICS”
+db.topics.insertMany([
+    {   
+        topicid: 1,
+        topic: "HTML",
+        topic_created: new Date("18-oct-2020")
+    },
+     {
+         topicid: 2,
+        topic: "CSS",
+        topic_created: new Date("28-oct-2020")
+    },
+     {
+         topicid: 3,
+        topic: "JavaScript",
+        topic_created: new Date("05-nov-2020")
+    },
+])
+
+# Create collection and insert data – “TASKS”
+    db.tasks.insertMany([
+    {
+        taskid: 1,
+        topicid: 1,
+        userid: 1,
+        task: "HTML Task",
+        due_date: new Date("18-oct-2020"),
+        submitted: true
+    },
+    {
+        taskid: 2,
+        topicid: 2,
+        userid: 2,
+        task: "CSS Task",
+        due_date: new Date("28-oct-2020"),
+        submitted: true
+    },
+     {
+        taskid: 3,
+        topicid: 3,
+        userid: 3,
+        task: "Javascript Task",
+        due_date: new Date("05-oct-2020"),
+        submitted: false
+    },
+])
+
+# Create collection and insert data – “ATTENDANCE”      
+db.attendance.insertMany([
+    {
+        userid: 1,
+        topicid: 2,
+        attended: true
+    },
+  
+   {
+        userid: 2,
+        topicid: 1,
+        attended: true
+    },
+     {
+        userid: 3,
+        topicid: 5,
+        attended: false
+    },
+])
+
+# Create collection and insert data – “MENTORS”    
+db.mentors.insertMany([
+    {
+        mentorid: 1,
+        mentorname: "Hari",
+        mentor_email:"Hari@gmail.com",
+        class_count: 20
+    },
+      {
+        mentorid: 2,
+        mentorname: "Manoj",
+        mentor_email: "manoj@gmail.com",
+        class_count: 18
+    },
+      {
+        mentorid: 3,
+        mentorname: "Sakthi",
+        mentor_email: "sakthi@gmail.com",
+        class_count: 30
+    },
+])
+
+# Create collection and insert data – “COMPANY DRIVES”
+      db.comapanydrives.insertMany([
+    {
+        userid: 1,
+        drive_date: new Date("20-oct-2020"),
+        company: "Apple"
+    },
+   
+  {
+        userid: 1,
+        drive_date: new Date("22-oct-2020"),
+        company: "Amazon"
+    },
+     {
+        userid: 2,
+        drive_date: new Date("25-oct-2020"),
+        company: "TCS"
+    },
+     {
+        userid: 3,
+        drive_date: new Date("30-oct-2020"),
+        company: "Flipkart"
+    },
+])
+
+1. Find all the topics and tasks which are thought in the month of October
+db.topics.aggregate([
+    {
+        $lookup:{
+            from:"tasks", // collection name to join,
+            localField:'topicid',
+            foreignField:'taskid',
+            as:'outputinfo'
+        }
+    },
+    {
+                $match: {$and: [{$or: [{topic_date: {$gt: new Date("30-sep-2020")}},{topic_date: {$lt: new Date("1-nov-2020")}}]},
+          {$or: [{"taskinfo.due_date": {$gt: new Date("30-sep-2020")}},{"taskinfo.due_date": {$lt: new Date("1-nov-2020")}}]}
+        ]}
+
+    }
+])
+
+
+2. Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+db.companydrives.find({$and:[{drive_date:{$gte:new Date("15-Oct-2020")}},{drive_date:{$lte:new Date("31-Oct-2020")}}]})
+
+3. Find all the mentors with who has the mentee's count more than 15
+db.mentors.find({class_count:{$gt:15}})
+
